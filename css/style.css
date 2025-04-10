@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "Barrio Regular";
+    src: URL(../Fontes/Barrio/Barrio-Regular.ttf)
+}
+  
+*{
+ font-family: "Barrio Regular", sans-serif;
+ font-optical-sizing: auto;
+ font-style: normal;
+ letter-spacing: 2px;
+
+ font-variation-settings:
+ "slnt" 0,
+ "wdth" 100,
+ "GRAD" 0,
+ "XOPQ" 96,
+ "XTRA" 468,
+ "YOPQ" 79,
+ "YTAS" 750,
+ "YTDE" -203,
+ "YTFI" 738,
+ "YTLC" 514,
+ "YTUC" 712;
+
+
+}
+
+
+
+.fundo {
+  background-image: url("../images/fundo.jpg");
+  width: 100%;
+  height: 900px;
+  min-height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30% 20%;
+  position: fixed;
+}
+
+.texto h1 {
+   width: 80%;
+   min-height: 150px;
+   height: 40%;
+   font-size: 500%;
+   color: rgb(240, 248, 255);
+
+   position: fixed;
+   text-align: right;
+   padding-right: 3%;
+   padding-top: 40px; /* empurra o texto pra baixo */
+
+   top: 25%;    /* Ajusta para descer um pouco */
+   right: 10%;  /* Ajusta para encostar do lado direito */
+
+   background-color: #00000099; /* fundo semi-transparente */
+   border-radius: 10px;
+   box-shadow: 0 0 15px #00ff004d;
+
+}
+
+.subtexto {
+  position: fixed;
+   top: 55%; /* muda essa porcentagem pra ajustar a posição do <p> */
+   right: 10%;
+   width: 60%;
+   min-height: 20px;
+   text-align: right;
+   padding: 3%;
+   border-radius: 30px;
+   font-size: 20px;
+   color: #edb119;
+ }
+
+
+.robo {
+ max-width: 50%;
+ position: fixed;
+}
