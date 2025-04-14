@@ -1,30 +1,35 @@
-// msg inicial vista pelo usuário
-alert('Boas vindas ao jogo do número secreto');
 
-//variáveis
+
+// Variáveis
 let numeroSecreto = parseInt(Math.random() * 100 + 1);
-let chute 
 let tentativas = 1;
 
-//enquanto o chute por diferente do numero secreto, irá ter tentativas
-while (chute != numeroSecreto) {
-    chute = prompt('Escolha um número de 1 a 100');
-//se o número secreto por igual ao chute, a contece isso
-    if (chute == numeroSecreto) {
-        break;
-        // se nao, acontece isso
+function verificarChute() {
+    const input = document.getElementById('inputChute');
+    const chute = parseInt(input.value || 0); // transformando em número
+
+    if (chute === numeroSecreto) {
+        alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} com ${tentativas} tentativa(s)!`);
+        // Reinicia o jogo
+        reiniciarJogo();
     } else {
-        //se o chute for maior q o numero secreto, aparece msg
-        if(chute > numeroSecreto) {
-            alert(`O número secreto é menor ${chute}`);
-            // se nao, aparece essa msg
+        if (chute > numeroSecreto) {
+            alert(`O número secreto é menor que ${chute}.`);
         } else {
-            alert(`O número secreto é maior ${chute}`);
+            alert(`O número secreto é maior que ${chute}.`);
         }
-        tentativas++; //tentativas = tentativas + 1 
-    }   
-    
+        tentativas++;
+        input.value = ''; // limpa o campo para novo chute
+        input.focus(); // coloca o cursor de volta no input
+    }
 }
+
+function reiniciarJogo() {
+    numeroSecreto = parseInt(Math.random() * 100 + 1);
+    tentativas = 1;
+    document.getElementById('inputChute').value = '';
+}
+
 // A palavra tentativas é maior que 1? caso tentativas seja maior que 1 utilize a palavra tentativas, se nao use a palavra tentativa.
-let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
-alert(`Parabéns! Você descobriu o número secreto ${numeroSecreto} com ${tentativas} ${palavraTentativa}`);
+//let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+//alert(`Parabéns! Você descobriu o número secreto ${numeroSecreto} com ${tentativas} ${palavraTentativa}`);
